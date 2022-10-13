@@ -1,0 +1,14 @@
+.clg-name{
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+.clg-img{
+    border-image-width: autos;
+    height: inherit;
+}
+
+.clg-img-container{
+    height: 100px;
+}
