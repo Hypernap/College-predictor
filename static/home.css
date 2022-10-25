@@ -10,5 +10,9 @@
 }
 
 .clg-img-container{
-    height: 100px;
+    height: 150px;
+}
+
+.card{
+    display: flex;
 }

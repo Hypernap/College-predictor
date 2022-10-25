@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class ="full">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'mainpage.css' %}?{% now "U" %}" />
+    <title>Collage Predictor</title>
+    <link rel = "icon" href = "http://127.0.0.1:8000/img/CollegePreDictor.png" />
+    
+</head>
+<body>
+    <div class="banner">
+
+        <div class="navbar">
+            <div class="image">
+                <img src="http://127.0.0.1:8000/img/CollegePreDictor.png" class="logo" alt="Preredict">
+                <h2>College-Predict</h2>
+            </div>  
+            <ul>
+                <li><a href='http://127.0.0.1:8000/'>Home</a></li>
+            </ul>
+        </div>
+
+        {% for clg in clgs %}
+        <div class="container">
+            <div class="box" > 
+                <img src="http://127.0.0.1:800/{{clg.Image}}" class="card-img" alt="{{clg.Image}}">
+            </div>
+            <h1 class="Name">"{{clg.collage_name}}"</h1>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">EXTC CUTOFF:{{clg.extc_cutoff}}</li>
+                <li class="list-group-item">CS CUTOFF{{clg.cs_cutoff}}</li>
+                <li class="list-group-item">ESC CUTOFF{{clg.ecs_cutoff}}</li>
+                <li class="list-group-item">MECH CUTOFF{{clg.mech_cutoff}}</li>
+              </ul>
+            <a href="{{clg.collage_website}}" class="btn btn-primary">WEBSITE</a>
+        </div>
+        {% endfor %}
+        
+
+    </div>
+
+</body>
+</html>

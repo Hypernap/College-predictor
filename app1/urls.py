@@ -5,5 +5,6 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('add/',views.add,name='add')
+    path('add/',views.add,name='add'),
+    path('predict/',views.main,name='main')
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
