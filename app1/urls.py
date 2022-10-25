@@ -4,7 +4,8 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('add/',views.add,name='add'),
-    path('predict/',views.main,name='main')
-]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+  path('', views.home, name='home'),
+  path('add/', views.add, name='add'),
+  path('predict/', views.main, name='main'),
+  path('clg/<int:cid>/', views.clg_page),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
