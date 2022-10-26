@@ -54,4 +54,8 @@
   }
 .full{
     background: #1a1a1c;
+  background-image: url('https://images.pexels.com/photos/6238050/pexels-photo-6238050.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  object-fit:contain;
+   background-repeat: no-repeat;
+  background-size: 100%;
 }
