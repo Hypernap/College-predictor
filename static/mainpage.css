@@ -1,5 +1,5 @@
 body{
-   background: #ABA8A9;
+   background:#1a1a1c;
 }
 .card_cont{
   box-shadow:0 10px 10px rgba(0,0,0,.6);
@@ -15,4 +15,17 @@ a{
   text-decoration:none;
   color:black;
   transition: all 0.5s;
+}
+.navbar{
+  background-color:mintcream;
+}
+.navbar-brand{
+  text-color:#cb0841;
+}
+
+h3{
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
+  width:100%;
+  color:#cb0841;
 }

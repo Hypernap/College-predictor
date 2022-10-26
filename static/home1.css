@@ -14,31 +14,35 @@
   .content{
     width: 100%;
     text-align: center;
-    color: #CBF83E;
+    color: #cb0841;
     font-size: 70px;
+    text-shadow: 0 0 5px black;
  }
   .searchTerm {
     width: 100%;
-    border: 3px solid #CBF83E;
+    border: 3px solid #cb0841;
     border-right: none;
     padding: 5px;
     height: 20px;
     border-radius: 15px 0px 0px 15px;
     outline: none;
-    color: black;
+    color:mintcream ;
+    text-shadow: 1 1 1px black;
+    
+    background-color:#1a1a1c;
   }
-  
-  .searchTerm:focus{
-    color: ;
-  }
+/*   .searchTerm:focus + .wrap{
+    width: 40%;
+  } */
+
   
   .searchButton {
     width: 40px;
     height: 36px;
-    border: 1px solid #CBF83E;
-    background: #CBF83E;
+    border: 1px solid  #cb0841;
+    background:  #cb0841;
     text-align: center;
-    color:grey;
+    color:black;
     border-radius: 0px 15px 15px 0px;
     cursor: pointer;
     font-size: 20px;
@@ -49,5 +53,5 @@
     width: 30%;
   }
 .full{
-    background: #ABA8A9;
+    background: #1a1a1c;
 }
