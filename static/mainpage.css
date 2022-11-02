@@ -1,5 +1,6 @@
 body{
    background:#1a1a1c;
+  margin:20px;
 }
 .card_cont{
   box-shadow:0 10px 10px rgba(0,0,0,.6);

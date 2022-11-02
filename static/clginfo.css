@@ -1,0 +1,72 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+body{
+   background:#1a1a1c;
+}
+
+.navbar{
+  background-color:mintcream;
+}
+.navbar-brand{
+  text-color:#cb0841;
+}
+
+.img-fl{
+  width:40vw;
+}
+h3,a{
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
+  width:100%;
+  color:#cb0841;
+  text-decoration:none;
+}
+.img-cont{
+  object-fit:contain;
+}
+
+fieldset, label { margin: 0; padding: 0; }
+body{ margin: 20px; }
+h1 { font-size: 1.5em; margin: 10px; 
+   color:white;}
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+.rating > input:checked ~ label{ 
+  color:gold;
+}
+
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+/* 
+.rating > input:checked ~ darkgoldenrodel, 
+.rating:not(:checked) > label:hover, 
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } 
+
+.rating > input:checked + label:hover, 
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, 
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }  */

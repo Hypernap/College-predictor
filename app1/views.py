@@ -94,7 +94,7 @@ def main(request):
 
 def clg_page(request, cid):
   context = {'clg': Collagename.objects.filter(id=cid)[0]}
-  return render(request, "clgpage.html", context)
+  return render(request, "clgmain.html", context)
 
 
 def add(request):
