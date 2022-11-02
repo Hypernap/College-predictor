@@ -33,45 +33,45 @@
           <h1>Rating</h1>
           <fieldset class="rating">
             
-              <input type="radio" id="star5" name="rating" value="5" disabled/>
+              <input type="radio" id="star5" name="rating" value="5" disabled {% if rating > 9 %} checked {% endif %}/>
             
             <label class = "full" for="star5" title="Awesome - 5 stars"></label>
             
-              <input type="radio" id="star4half" name="rating" value="4 and a half" disabled/>
+              <input type="radio" id="star4half" name="rating" value="4 and a half" disabled {% if rating > 8 and rating <= 9 %} checked {% endif %}/>
             
             <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
             
-              <input type="radio" id="star4" name="rating" value="4" disabled/>
+              <input type="radio" id="star4" name="rating" value="4" disabled {% if rating > 7 and rating <= 8 %} checked {% endif %}/>
             
             <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
             
-              <input type="radio" id="star3half" name="rating" value="3 and a half" disabled checked/>
+              <input type="radio" id="star3half" name="rating" value="3 and a half" disabled {% if rating > 6 and rating <= 7 %} checked {% endif %}/>
             
             <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
             
-              <input type="radio" id="star3" name="rating" value="3" disabled/>
+              <input type="radio" id="star3" name="rating" value="3" disabled {% if rating > 5 and rating <= 6 %} checked {% endif %}/>
             
             <label class = "full" for="star3" title="Meh - 3 stars"></label>
             
-              <input type="radio" id="star2half" name="rating" value="2 and a half" disabled/>
+              <input type="radio" id="star2half" name="rating" value="2 and a half" disabled {% if rating > 4 and rating <= 5 %} checked {% endif %}/>
             
             <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
             
-              <input type="radio" id="star2" name="rating" value="2" disabled/>
+              <input type="radio" id="star2" name="rating" value="2" disabled {% if rating > 3 and rating <= 4 %} checked {% endif %}/>
             
             <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
             
-              <input type="radio" id="star1half" name="rating" value="1 and a half" disabled/>
+              <input type="radio" id="star1half" name="rating" value="1 and a half" disabled {% if rating > 2 and rating <= 3 %} checked {% endif %}/>
             
             <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
             
-              <input type="radio" id="star1" name="rating" value="1" disabled/>
+              <input type="radio" id="star1" name="rating" value="1" disabled {% if rating > 1 and rating <= 2 %} checked {% endif %}/>
             
-            <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+            <label class = "full" for="star1" title="Not to bad - 1 star"></label>
             
-              <input type="radio" id="starhalf" name="rating" value="half" disabled/>
+              <input type="radio" id="starhalf" name="rating" value="half" disabled {% if rating > 0 and rating <= 1 %} checked {% endif %}/>
             
-            <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+            <label class="half" for="starhalf" title="too bad - 0.5 stars"></label>
           </fieldset>
 
 

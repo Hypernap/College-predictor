@@ -3,6 +3,8 @@ from .models import Collagename
 from .forms import MyUserCreationForm
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
+from functools import reduce
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
@@ -17,7 +19,7 @@ def auth(request):
     user = authenticate(request, username=username, password=password)
     if user is not None:
       login(request, user)
-      return redirect('home')
+      return redirect('rate')
     else:
       messages.info(request, 'Username or Password is incorrect')
   elif request.method == 'POST':
@@ -27,7 +29,6 @@ def auth(request):
       messages.success(
         request,
         "Account was created for " + form.cleaned_data.get("username"))
-      return redirect('home')
   context = {'form': form}
   print(form)
   return render(request, 'auth.html', context)
@@ -94,7 +95,31 @@ def main(request):
 
 def clg_page(request, cid):
   context = {'clg': Collagename.objects.filter(id=cid)[0]}
+  context['rating'] = context['clg'].rating_set.all()
+  context['rating'] = reduce(
+    lambda x, y: x.rating + y.rating, context['rating']) / len(
+      context['rating']) if len(context['rating']) else 6
+  print(context['rating'])
   return render(request, "clgmain.html", context)
+
+
+@login_required(login_url='auth')
+def rate(request):
+  context = {'clgs': Collagename.objects.all()}
+  if request.method == "POST":
+    p = request.POST
+    print(p.get('rating'), p.get('clg'))
+    li = request.user.rating_set.filter(collagename=Collagename.objects.filter(
+      collage_name=p.get('clg'))[0])
+    if li:
+      li[0].rating = p.get('rating')
+      li[0].save()
+    else:
+      request.user.rating_set.create(
+        collagename=Collagename.objects.filter(collage_name=p.get('clg'))[0],
+        rating=p.get('rating'))
+    return redirect("home")
+  return render(request, "rate.html", context)
 
 
 def add(request):
