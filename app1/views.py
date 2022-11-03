@@ -96,10 +96,13 @@ def main(request):
 def clg_page(request, cid):
   context = {'clg': Collagename.objects.filter(id=cid)[0]}
   context['rating'] = context['clg'].rating_set.all()
-  context['rating'] = reduce(
-    lambda x, y: x.rating + y.rating, context['rating']) / len(
-      context['rating']) if len(context['rating']) else 6
-  print(context['rating'])
+  
+  ctr=0
+  for i in context['rating']:
+    ctr+=i.rating
+  print("R:",ctr)
+  context['rating'] = ctr if len(context['rating']) else 6
+  print("R:", context['rating'])
   return render(request, "clgmain.html", context)
 
 
@@ -119,6 +122,7 @@ def rate(request):
         collagename=Collagename.objects.filter(collage_name=p.get('clg'))[0],
         rating=p.get('rating'))
     return redirect("home")
+    messages.success(request, 'Success')
   return render(request, "rate.html", context)
 
 
